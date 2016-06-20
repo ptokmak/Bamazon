@@ -1,0 +1,24 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Storefront application using mySQL database",
+  "main": "BamazonCustomer.js",
+  "dependencies": {
+    "inquirer": "^1.0.3",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptokmak/Bamazon.git"
+  },
+  "author": "Pinar Tokmak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptokmak/Bamazon/issues"
+  },
+  "homepage": "https://github.com/ptokmak/Bamazon#readme"
+}
