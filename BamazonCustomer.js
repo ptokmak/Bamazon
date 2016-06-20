@@ -2,9 +2,9 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: 'localhost',
-	port:3306, //most of the ports
+	port:3306, 
 	user: 'root',
-	password:'', //if you don't have a pw leave empty
+	password:'', 
 	database:'bamazondb'
 
 });
