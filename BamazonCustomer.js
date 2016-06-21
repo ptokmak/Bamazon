@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: '******',
+  password: '*****',
   database: 'bamazondb'
 })
 
@@ -25,7 +25,7 @@ purchase();
 
 function purchase(){
   connection.query('SELECT * FROM Products',function(err,res){
-  	//console.log(" ");
+  	console.log(" ");
   for(var i=0;i<res.length;i++){
   	
 	console.log(res[i].ItemID+" | "+res[i].ProductName+" | "+res[i].DepartmentName+" | "+res[i].Price);
@@ -41,7 +41,7 @@ function purchase(){
         name: 'itemId'
        },{
        	type:'input',
-       	message: 'Please enter quantity',
+       	message: 'Please enter quantity:',
        	name: 'quantity'
        }]).then(function (answers) {
         
@@ -51,7 +51,7 @@ function purchase(){
              // Stock Quantity Check
             if (answers.quantity > res[0].StockQuantity){
             	console.log(" ");
-            	console.log("Insufficient quantity!: There are only "+ res[0].StockQuantity+" left in stock!" );
+            	console.log("Insufficient quantity!: There are only "+ res[0].StockQuantity+" items left in stock!" );
             
             purchase();
           } 
@@ -63,12 +63,7 @@ function purchase(){
             console.log("Purchase Summary: " +answers.quantity + " " + res[0].ProductName + "." );
 
             console.log("Your total is " + " $" +total);
-
-            console.log("Thank you for shopping at BAMAZON!");
-
-            //updates stock
-            connection.query('UPDATE Products SET StockQuantity = "'+(res[0].StockQuantity - answers.quantity)+'" WHERE ProductName = "'+answers.itemId+'"');
-           
+            console.log("Thank you for shopping at BAMAZON!");            
           }      
 
         })
